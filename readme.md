@@ -2,13 +2,13 @@ iOS 全局做登录的逻辑
 
 ```
 // 目标VC
-var targetVC: UIViewController?
+private var targetVC: UIViewController?
 // 目标参数
-var targetParams: [String: Any] = [String: Any]()
+private var targetParams: [String: Any] = [String: Any]()
 // 跳转类型
-var jumpType = 0
+private var jumpType = 0
 // 当前VC
-var currentVC: UIViewController?
+private var currentVC: UIViewController?
 ```
 
 ```swift
