@@ -1,5 +1,6 @@
 iOS 全局做登录的逻辑
 
+##### 0、主VC中编写逻辑代码
 ```swift
 // 目标VC
 private var targetVC: UIViewController?
@@ -72,6 +73,7 @@ private var currentVC: UIViewController?
     }
 ```
 
+##### 1、获取最顶部的VC
 ```swift
     // 获取当前的VC
     func topViewController(_ viewController: UIViewController? = nil) -> UIViewController? {
@@ -94,7 +96,7 @@ private var currentVC: UIViewController?
     }
 ```
 
-需要登录才跳转的页面
+##### 2、需要登录才跳转的页面
 如：登录成功后才跳转到收藏页面
 ```swift
         // 我的收藏
@@ -107,13 +109,13 @@ private var currentVC: UIViewController?
         }
 ```
 
-登录成功
+##### 3、登录成功
 
 ```
  NotificationCenter.default.post(name: NSNotification.Name.init("LoginSuccess"), object: nil)
 ```
 
-接口登录全局状态码拦截
+##### 4、接口登录全局状态码拦截
 未登录则弹窗登录框
 ```swift
     static func interceptStatusCode(json: JSON) {
