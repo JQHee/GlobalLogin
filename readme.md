@@ -12,13 +12,13 @@ private var currentVC: UIViewController?
 ```
 
 ```swift
-deinit {
+    deinit {
        NotificationCenter.default.removeObserver(self)
     }
     
     func viewBindEvents() {
         // 检测到未登录调用
-         NotificationCenter.default.addObserver(self, selector: #selector(loginAction(noti:)), name: NSNotification.Name.init("Login"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loginAction(noti:)), name: NSNotification.Name.init("Login"), object: nil)
         // 登录成功时调用
         NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess(noti:)), name: NSNotification.Name.init("LoginSuccess"), object: nil)
     }
@@ -28,7 +28,7 @@ deinit {
             return
         }
         currentVC = topVC
-        // print(noti.object ?? [:])
+        debugPrint(noti.object ?? [:])
         let notiInfo = noti.object ?? [:]
         if let tempNotiInfo = notiInfo as? [String: Any] {
             targetParams = tempNotiInfo
