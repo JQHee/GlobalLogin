@@ -1,6 +1,6 @@
 iOS 全局做登录的逻辑
 
-```
+```swift
 // 目标VC
 private var targetVC: UIViewController?
 // 目标参数
